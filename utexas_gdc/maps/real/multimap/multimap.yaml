@@ -12,3 +12,7 @@ maps:
     origin: [0, 0, 5, 0, 0, 0]
     data_directory: package://utexas_gdc/maps/real/3
   
+  Library_1st:
+    yaml: package://utexas_gdc/maps/real/library/library_1st.yaml
+    origin: [0, 0, 5, 0, 0, 0]
+    data_directory: package://utexas_gdc/maps/real/library/
