@@ -24,12 +24,12 @@ int main(int argc, char**argv) {
   
   std::vector<string> doors;
   
-  doors.push_back("d3_414b1");
-  doors.push_back("d3_414b2");
-  doors.push_back("d3_414a1");
-  doors.push_back("d3_414a2");
+  doors.push_back("n09_d1");
+  doors.push_back("q_corr_d1");
+//  doors.push_back("d3_414a1");
+//  doors.push_back("d3_414a2");
 
-  doors.push_back("d3_418");
+//  doors.push_back("d3_418");
   int current_door = 0;
 
   Client client("/action_executor/execute_plan", true);

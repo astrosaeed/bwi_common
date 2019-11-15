@@ -8,7 +8,7 @@ maps:
     origin: [0, 0, 3, 0, 0, 0]
     data_directory: package://utexas_gdc/maps/real/2
   3rdFloor:
-    yaml: package://utexas_gdc/maps/real/3/kishanmap_v4.yaml
+    yaml: package://utexas_gdc/maps/real/3/3.yaml
     origin: [0, 0, 5, 0, 0, 0]
     data_directory: package://utexas_gdc/maps/real/3
   
