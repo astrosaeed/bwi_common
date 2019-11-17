@@ -1,0 +1,4 @@
+data: locations.pgm
+locations: [new_loc1]
+polygons:
+- [113, 96, 2137, 96, 2137, 2109, 113, 2109, 113, 96]
