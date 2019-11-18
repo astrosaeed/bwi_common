@@ -19,7 +19,13 @@ door(shiqi_office_d).
 door(n_corr_d1).
 door(n_corr_d2).
 door(q_corr_d1).
-
+door(q_corr_d2).
+door(t01_d1).
+door(t01_d2).
+door(main_office_d).
+door(s_corr_d1).
+door(t_corr_d1).
+door(t_corr_d2).
 
 hasdoor(n09,n09_d1). 
 hasdoor(n09,n09_d2).  
@@ -40,6 +46,31 @@ hasdoor(main_corr,n_corr_d2).
 hasdoor(q_corr,q_corr_d1).  
 hasdoor(main_corr,q_corr_d1).  
 
+
+hasdoor(q_corr,q_corr_d2).  
+hasdoor(main_corr,q_corr_d2).  
+
+
+hasdoor(s_corr,s_corr_d1).  
+hasdoor(main_corr,s_corr_d1).
+
+
+hasdoor(t_corr,t_corr_d1).  
+hasdoor(main_corr,t_corr_d1).
+  
+hasdoor(t_corr,t_corr_d2).  
+hasdoor(main_corr,t_corr_d2).
+
+hasdoor(t01,t01_d1).  
+hasdoor(main_corr,t01_d1).  
+
+
+hasdoor(t01,t01_d2).  
+hasdoor(main_corr,t01_d2).  
+
+
+hasdoor(main_office,main_office_d).  
+hasdoor(main_corr,main_office_d).  
 
 acc(n_corr, p_corr).
 acc(p_corr, q_corr).
