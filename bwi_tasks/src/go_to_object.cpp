@@ -15,7 +15,7 @@ int main(int argc, char**argv) {
   
   ros::NodeHandle privateNode("~");
   string object;
-  privateNode.param<string>("object",object,"o3_434_soccer");
+  privateNode.param<string>("object",object,"logo");
   
   ROS_INFO_STREAM("going to " << object);
   

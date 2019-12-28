@@ -1,0 +1,4 @@
+object(logo).
+inside(logo,main_corr).object(logo).
+inside(logo,main_corr).object(logo).
+inside(logo,main_corr).

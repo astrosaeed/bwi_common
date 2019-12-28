@@ -1,1 +1,4 @@
-[]
+- name: water_fountain
+  point: [-57.3, -50.5, 0.0]
+- name: logo
+  point: [-38.4, -34.35, 0.0]
