@@ -88,11 +88,13 @@ acc(R1,R2) :- acc(R1,R3), acc(R2,R3), room(R1), room(R2), room(R3).
 %inside(coffee_counter, l2_302).
 
 
-%object(o1_800).
-%inside(o1_800,l1_800).
+object(water_fountain).
+inside(water_fountain,q_corr).
 
 
 
 
 %badDoor(d3_414a3).
 %badDoor(d3_414b3).
+object(logo).
+inside(logo,main_corr).
