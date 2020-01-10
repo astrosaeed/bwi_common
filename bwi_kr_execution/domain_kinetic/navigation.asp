@@ -17,21 +17,20 @@ at(R2,I) :- gothrough(D,I), at(R1,I-1), dooracc(R1,D,R2), I>0, I=n-1.
 :- gothrough(D,I), not open(D,I-1).
 %cannot go through if the person in office is not available
 %:- gothrough(D,I), at(R1,I-1), dooracc(R1,D,R2), hasoffice(P,R2), not accessgranted(D,I-1).
-:- gothrough(D,I), at(R1,I-1), dooracc(R1,D,R2), hasoffice(P,R2), not accessgranted(D,I-1).
 
 open(D,I) :- opendoor(D,I), I>0, I=n-1.
 facing(D,I) :- opendoor(D,I), I>0, I=n-1.
 beside(D,I) :- opendoor(D,I), I>0, I=n-1.
 %at(R,I) :- opendoor(D,I), at(R,I-1), I>0, I=n-1.
-:- opendoor(D,I), badDoor(D).
-:- opendoor(D,I), not facing(D,I-1).
-:- opendoor(D,I), closedofficedoor(D,I-1).
 :- opendoor(D,I), open(D,I-1).
+:- opendoor(D,I), not facing(D,I-1).
+%:- opendoor(D,I), badDoor(D).
+%:- opendoor(D,I), closedofficedoor(D,I-1).
 
-facing(O,I) :- goto(O,I), I>0, I=n-1.
-beside(O,I) :- goto(O,I), I>0, I=n-1.
-at(R,I) :- goto(O,I), inside(O,R), I>0, I=n-1.
-:- goto(O,I), inside(O,R1), at(R2,I-1), not acc(R1,R2).
+facing(L,I) :- goto(L,I), I>0, I=n-1.
+beside(L,I) :- goto(L,I), I>0, I=n-1.
+at(R,I) :- goto(L,I), inside(L,R), I>0, I=n-1.
+:- goto(L,I), inside(L,R1), at(R2,I-1), not acc(R1,R2).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
@@ -44,8 +43,8 @@ at(R,I) :- goto(O,I), inside(O,R), I>0, I=n-1.
 %you can only be beside a door at any given time (if you delete this,
 %the observations must also return -beside which doesn't happen at the moment.
 -beside(D,I) :- beside(D,I-1), at(R,I), not hasdoor(R,D), door(D), I>0, I=n-1.
--beside(O2,I):- beside(O1,I), beside(O2,I-1), O1 != O2, I>0, I=n-1.
--beside(O,I) :- beside(O,I-1), at(R,I), not inside(O,R), object(O), I>0, I=n-1.
+-beside(L2,I):- beside(L1,I), beside(L2,I-1), L1 != L2, I>0, I=n-1.
+-beside(L,I) :- beside(L,I-1), at(R,I), not inside(L,R), location(L), I>0, I=n-1.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 % Inertia
@@ -57,8 +56,10 @@ at(L,I) :- at(L,I-1), not -at(L,I), I>0, I=n-1.
 facing(D,I) :- facing(D,I-1), not -facing(D,I), I>0, I=n-1.
 -facing(D,I) :- -facing(D,I-1), not facing(D,I), I>0, I=n-1.
 %you can be facing only one door at a time
--facing(O2,I):- facing(O1,I), facing(O2,I-1), O1 != O2, I>0, I=n-1.
+-facing(L2,I):- facing(L1,I), facing(L2,I-1), L1 != L2, I>0, I=n-1.
 %-facing(D,I) :- facing(D,I-1), at(R,I), not hasdoor(R,D), I>0, I=n-1.
+%reset -open when we want to look for a person again
+-knowclosed(D,1) :- hasdoor(R,D), not facing(D,1), not facing(D,0).
 % open is inertial
 open(D,I) :- open(D,I-1), not -open(D,I), I>0, I=n-1.
 -open(D,I) :- -open(D,I-1), not open(D,I), not -knowclosed(D,I), I>0, I=n-1.

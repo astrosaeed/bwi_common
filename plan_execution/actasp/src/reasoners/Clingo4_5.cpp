@@ -569,7 +569,10 @@ std::string Clingo4_5::makeQuery(const std::string& query,
 //   if ( finalTimeStep > initialTimeStep ) //when max and initial are the same, we do not want max
     iterations << " -cimax=" << finalTimeStep;
 
-  commandLine << "clingo " << iterations.str() << " " << domainDir << "*.asp " << queryPath << " ";
+  //commandLine << "clingo --version" << " ";
+  //system("clingo --version");
+
+  commandLine << "clingo " << iterations.str() << " " << domainDir << "*.asp " << domainDir << "*.lua " << queryPath << " ";
   if(useCurrentState)
     commandLine<< (currentFilePath);
   

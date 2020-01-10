@@ -15,10 +15,10 @@ int main(int argc, char**argv) {
 
   ros::NodeHandle privateNode("~");
   string locationA;
-  privateNode.param<string>("a",locationA,"d3_414b1");
+  privateNode.param<string>("a",locationA,"s1");
 
   string locationB;
-  privateNode.param<string>("b",locationB,"d3_414b2");
+  privateNode.param<string>("b",locationB,"s2");
 
 
 
@@ -39,7 +39,7 @@ int main(int argc, char**argv) {
 
     plan_execution::AspRule rule;
     plan_execution::AspFluent fluent;
-    fluent.name = "not facing";
+    fluent.name = "not at";
 
     fluent.variables.push_back(location);
 

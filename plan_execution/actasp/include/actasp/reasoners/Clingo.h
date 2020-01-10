@@ -3,6 +3,7 @@
 
 #include <actasp/reasoners/Clingo4_2.h>
 #include <actasp/reasoners/Clingo4_5.h>
+#include <actasp/reasoners/Clingo5_4.h>
 
 namespace actasp {
 
@@ -21,7 +22,8 @@ struct Clingo {
 		}
 
 		if (ros_distro == "kinetic") {
-			return new Clingo4_5(incrementalVar, queryDir, domainDir.substr(0, domainDir.size()-1)+"_kinetic/", actions, max_time);
+			// return new Clingo4_5(incrementalVar, queryDir, domainDir.substr(0, domainDir.size()-1)+"_kinetic/", actions, max_time);
+			return new Clingo5_4(incrementalVar, queryDir, domainDir.substr(0, domainDir.size()-1)+"_kinetic/", actions, max_time);
 		}
 	}
 
