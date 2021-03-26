@@ -1,4 +1,16 @@
+- name: table_near_box
+  point: [-4.8999999999999915, -10.100000000000001, 0.0]
+- name: box_near_table
+  point: [-3.9499999999999957, -10.25, 0.0]
+- name: chair_near_box
+  point: [-4.8999999999999915, -10.100000000000001, 0.0]
 - name: water_fountain
   point: [-57.3, -50.5, 0.0]
 - name: logo
-  point: [-38.4, -34.35, 0.0]
+  point: [-38.349999999999994, -34.3, 0.0]
+- name: table_near_chair
+  point: [-3.9499999999999957, -10.25, 0.0]
+- name: box_near_chair
+  point: [-4.8999999999999915, -10.100000000000001, 0.0]
+- name: chair_near_table
+  point: [-3.9499999999999957, -10.25, 0.0]
